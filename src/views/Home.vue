@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="gold's gym logo" src="../assets/logo.png">
+    <!-- <img alt="gold's gym logo" src="../assets/logo.png"> -->
     <Login msg="Welcome to Gold's GYM App"/>
   </div>
 </template>
