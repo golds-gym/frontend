@@ -1,41 +1,30 @@
 <template>
-  <v-card max-width="450" class="mx-auto">
-    <v-card-title>Provide your Member's ID</v-card-title>
-    <v-card-text>
-      <v-form>
-        <v-text-field label="ID" name="id" prepend-icon="mdi-account" type="text" />
-        <v-text-field id="code" label="Code" name="code" prepend-icon="mdi-lock" type="password" />
-      </v-form>
-    </v-card-text>
-    <v-card-actions class="ma-2">
-      <v-btn block color="primary">Login</v-btn>
-    </v-card-actions>
-    <v-row align="center" justify="center">
-      <v-subheader>or login with</v-subheader>
-    </v-row>
-    <v-row align="center" justify="center">
-      <v-col md="auto">
-        <v-tooltip>
-          <template v-slot:activator="{ on }">
-            <v-btn icon outlined large v-on="on">
-              <v-icon>mdi-vk</v-icon>
-            </v-btn>
-          </template>
-          <span>Login via VK</span>
-        </v-tooltip>
+  <v-container>
+    <v-row dense>
+      <v-col cols="12">
+        <v-card>
+          <v-card-title>Goals</v-card-title>
+        </v-card>
       </v-col>
-      <v-col md="auto">
-        <v-tooltip>
-          <template v-slot:activator="{ on }">
-            <v-btn icon outlined large v-on="on">
-              <v-icon>mdi-google</v-icon>
-            </v-btn>
-          </template>
-          <span>Login via Google</span>
-        </v-tooltip>
+      <v-col cols="12">
+        <v-card>
+          <v-card-title>Upcoming trainings</v-card-title>
+          <v-card-text>
+            <v-calendar></v-calendar>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer/>
+            <v-btn>Schedule training</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+      <v-col cols="12">
+        <v-btn block color="deep-orange" @click="logout">
+          <span>Logout</span>
+        </v-btn>
       </v-col>
     </v-row>
-  </v-card>
+  </v-container>
 </template>
 
 <script>
@@ -44,6 +33,11 @@
 // import Login from "@/components/Login.vue";
 
 export default {
-  name: "Home"
+  name: "Home",
+  methods: {
+    logout: function() {
+      this.$store.commit("logout");
+    }
+  }
 };
 </script>

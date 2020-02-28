@@ -1,6 +1,15 @@
 <template>
-  <v-card max-width="450" class="mx-auto">
+  <div>
+    <v-subheader>Your personal trainer</v-subheader>
+    <v-list-item>
+      <v-list-item-avatar color="grey"></v-list-item-avatar>
+      <v-list-item-content>
+        <v-list-item-title>You still have not chosen a coach</v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
+    <v-divider />
     <v-list three-line>
+      <v-subheader>Trainers</v-subheader>
       <template v-for="(item, index) in items">
         <v-subheader v-if="item.header" :key="item.header" v-text="item.header"></v-subheader>
 
@@ -18,7 +27,7 @@
         </v-list-item>
       </template>
     </v-list>
-  </v-card>
+  </div>
 </template>
 
 <script>
@@ -35,7 +44,7 @@ export default {
       { divider: true, inset: true },
       {
         avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-        title: 'Travis Howard',
+        title: "Travis Howard",
         subtitle:
           "<span class='text--primary'>Trainer 2</span> Some cool description"
       },

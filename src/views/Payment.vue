@@ -1,5 +1,5 @@
 <template>
-  <v-card max-width="450" class="mx-auto">
+  <v-card flat>
     <v-card-title>
       <span>Manage your balance</span>
     </v-card-title>
