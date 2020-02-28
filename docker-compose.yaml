@@ -1,0 +1,9 @@
+version: "3"
+services:
+  golds-gym-dev-server:
+    image: node
+    volumes:
+      - ./:/app
+    ports: ["8080:8080"]
+    working_dir: /app
+    command: yarn serve
