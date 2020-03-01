@@ -4,6 +4,6 @@ services:
     image: node
     volumes:
       - ./:/app
-    ports: ["8080:8080"]
+    ports: ["80:8080"]
     working_dir: /app
-    command: yarn serve
+    command: sh -c "yarn && yarn serve"
