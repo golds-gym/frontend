@@ -32,7 +32,7 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-bottom-navigation v-show="bottomNav" app fixed>
+    <v-bottom-navigation :value="bottomNav" app fixed>
       <template v-for="item in items">
         <v-btn height="inherit" :key="item.text" :to="item.to">
           <span>{{ item.text }}</span>
