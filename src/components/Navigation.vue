@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-navigation-drawer :value="drawerNav" app>
-      <!--v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app> -->
       <v-list-item>
         <v-list-item-avatar>
           <v-img src="https://gpluseurope.com/wp-content/uploads/Mauro-profile-picture-300x261.jpg"></v-img>
@@ -33,7 +32,7 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-bottom-navigation v-show="bottomNav" app>
+    <v-bottom-navigation v-show="bottomNav" app fixed>
       <template v-for="item in items">
         <v-btn height="inherit" :key="item.text" :to="item.to">
           <span>{{ item.text }}</span>
