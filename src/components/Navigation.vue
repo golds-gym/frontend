@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawerNan" app>
+    <v-navigation-drawer :value="drawerNan" app>
       <!--v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app> -->
       <v-list-item>
         <v-list-item-avatar>
