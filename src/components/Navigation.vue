@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer :value="drawerNan" app>
+    <v-navigation-drawer :value="drawerNav" app>
       <!--v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app> -->
       <v-list-item>
         <v-list-item-avatar>
@@ -51,7 +51,7 @@ export default {
     logedin: function() {
       return this.$store.state.logedin;
     },
-    drawerNan: function() {
+    drawerNav: function() {
       return this.$vuetify.breakpoint.lgAndUp && this.logedin;
     },
     bottomNav: function() {
