@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-show="logedin" app>
+    <v-navigation-drawer v-model="drawerNan" app>
       <!--v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app> -->
       <v-list-item>
         <v-list-item-avatar>
@@ -33,7 +33,7 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-bottom-navigation v-show="$vuetify.breakpoint.smAndDown && logedin" app>
+    <v-bottom-navigation v-show="bottomNav" app>
       <template v-for="item in items">
         <v-btn height="inherit" :key="item.text" :to="item.to">
           <span>{{ item.text }}</span>
@@ -50,6 +50,12 @@ export default {
   computed: {
     logedin: function() {
       return this.$store.state.logedin;
+    },
+    drawerNan: function() {
+      return this.$vuetify.breakpoint.lgAndUp && this.logedin;
+    },
+    bottomNav: function() {
+      return this.$vuetify.breakpoint.smAndDown && this.logedin;
     }
   },
   data: () => ({
