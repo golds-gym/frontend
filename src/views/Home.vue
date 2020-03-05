@@ -1,42 +1,16 @@
 <template>
   <v-container>
     <v-row dense>
-      <v-col v-for="goal in goals" :key="goal.title" cols="12">
-        <v-card class="mt-8 mx-auto">
-          <v-sheet
-            color="cyan"
-            max-width="calc(100% - 32px)"
-            class="v-sheet--offset mx-auto"
-            elevation="12"
-          >
-            <v-sparkline
-              :key="String(avg)"
-              :smooth="16"
-              color="white"
-              :line-width="3"
-              :label-size="12"
-              :padding="16"
-              :labels="goal.results.map(i=>i[0])"
-              :value="goal.results.map(i=>i[1])"
-              auto-draw
-              stroke-linecap="round"
-            ></v-sparkline>
-          </v-sheet>
-          <v-card-title >{{ goal.goal }}{{ goal.units }}</v-card-title>
-          <v-card-subtitle>{{ goal.title }}</v-card-subtitle>
-        </v-card>
+      <v-col cols="12">
+        <v-subheader>Goals</v-subheader>
+        <v-row>
+          <v-col class="pa-1" v-for="goal in goals" :key="goal.title">
+            <Goal v-bind="goal"></Goal>
+          </v-col>
+        </v-row>
       </v-col>
       <v-col cols="12" class="mt-4">
-        <v-card>
-          <v-card-title>Upcoming trainings</v-card-title>
-          <v-card-text>
-            <v-calendar></v-calendar>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer />
-            <v-btn>Schedule training</v-btn>
-          </v-card-actions>
-        </v-card>
+        <UpcomingEvents :events="events"></UpcomingEvents>
       </v-col>
       <v-col cols="12" class="mt-4">
         <v-btn block color="deep-orange" @click="logout">
@@ -47,17 +21,11 @@
   </v-container>
 </template>
 
-<style>
-  .v-sheet--offset {
-    top: -24px;
-    position: relative;
-  }
-</style>
-
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
-// import Login from "@/components/Login.vue";
+import Goal from "@/components/Goal.vue";
+import UpcomingEvents from "@/components/UpcomingEvents.vue";
 const exhale = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 export default {
@@ -82,6 +50,19 @@ export default {
   data: () => ({
     checking: false,
     heartbeats: [],
+    events: [
+      {
+        day: "Thu",
+        time: "6PM",
+        title: "Training",
+      },
+      {
+        day: "Fri",
+        time: "6PM",
+        title: "Training",
+        subtitle: "legs",
+      },
+    ],
     goals: [
       {
         title: "Weight loss",
@@ -125,28 +106,6 @@ export default {
           [" ", 34]
         ]
       },
-      {
-        title: "Deadlift-2",
-        goal: 50,
-        units: "x5",
-        results: [
-          ["SU", 30],
-          [" ", 30],
-          ["TU", 30],
-          [" ", 30],
-          ["TH", 32],
-          [" ", 32],
-          ["SA", 32],
-          [" ", 32],
-          ["MO", 32.5],
-          [" ", 32.5],
-          ["WE", 32.5],
-          [" ", 34],
-          ["FR", 34],
-          [" ", 34]
-        ]
-      }
-
     ]
   }),
 
@@ -163,6 +122,11 @@ export default {
 
   created() {
     this.takePulse(false);
+  },
+
+  components: {
+    Goal,
+    UpcomingEvents
   }
 };
 </script>
