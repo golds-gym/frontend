@@ -9,8 +9,13 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="12" class="mt-4">
-        <UpcomingEvents :events="events"></UpcomingEvents>
+      <v-col cols="12" class="mb-6">
+        <v-subheader>Upcoming Events</v-subheader>
+        <v-row>
+          <v-col class="pa-1">
+            <UpcomingEvents :events="events"></UpcomingEvents>
+          </v-col>
+        </v-row>
       </v-col>
       <v-col cols="12" class="mt-4">
         <v-btn block color="deep-orange" @click="logout">
@@ -54,58 +59,26 @@ export default {
       {
         day: "Thu",
         time: "6PM",
-        title: "Training",
+        title: "Training"
       },
       {
         day: "Fri",
         time: "6PM",
         title: "Training",
-        subtitle: "legs",
-      },
+        subtitle: "legs"
+      }
     ],
     goals: [
       {
         title: "Weight loss",
         goal: 56,
-        units: "kg",
-        results: [
-          ["SU", 61],
-          [" ", 62],
-          ["TU", 62.5],
-          [" ", 61],
-          ["TH", 61.4],
-          [" ", 61],
-          ["SA", 60.6],
-          [" ", 60.8],
-          ["MO", 60],
-          [" ", 60],
-          ["WE", 60.2],
-          [" ", 59.8],
-          ["FR", 59.8],
-          [" ", 59]
-        ]
+        units: "kg"
       },
       {
         title: "Deadlift",
         goal: 40,
-        units: "x5",
-        results: [
-          ["SU", 30],
-          [" ", 30],
-          ["TU", 30],
-          [" ", 30],
-          ["TH", 32],
-          [" ", 32],
-          ["SA", 32],
-          [" ", 32],
-          ["MO", 32.5],
-          [" ", 32.5],
-          ["WE", 32.5],
-          [" ", 34],
-          ["FR", 34],
-          [" ", 34]
-        ]
-      },
+        units: "x5"
+      }
     ]
   }),
 
