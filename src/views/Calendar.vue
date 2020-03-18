@@ -49,44 +49,44 @@ export default {
       this.events = [
         {
           name: "Training",
-          start: this.formatDate(new Date("March 3, 2020 20:00:00"), true),
-          end: this.formatDate(new Date("March 3, 2020 21:30:00"), true),
+          start: this.formatDate(new Date("March 3, 2020 20:00:00"), false),
+          end: this.formatDate(new Date("March 3, 2020 21:30:00"), false),
           color: "indigo"
         },
         {
           name: "with PT",
-          start: this.formatDate(new Date("March 7, 2020 10:00:00"), true),
-          end: this.formatDate(new Date("March 7, 2020 12:30:00"), true),
+          start: this.formatDate(new Date("March 7, 2020 10:00:00"), false),
+          end: this.formatDate(new Date("March 7, 2020 12:30:00"), false),
           color: "deep-purple"
         },
         {
           name: "Training",
-          start: this.formatDate(new Date("March 10, 2020 20:00:00"), true),
-          end: this.formatDate(new Date("March 10, 2020 21:30:00"), true),
+          start: this.formatDate(new Date("March 10, 2020 20:00:00"), false),
+          end: this.formatDate(new Date("March 10, 2020 21:30:00"), false),
           color: "indigo"
         },
         {
           name: "with PT",
-          start: this.formatDate(new Date("March 14, 2020 10:00:00"), true),
-          end: this.formatDate(new Date("March 14, 2020 12:30:00"), true),
+          start: this.formatDate(new Date("March 14, 2020 10:00:00"), false),
+          end: this.formatDate(new Date("March 14, 2020 12:30:00"), false),
           color: "deep-purple"
         },
         {
           name: "Training",
-          start: this.formatDate(new Date("March 17, 2020 20:00:00"), true),
-          end: this.formatDate(new Date("March 17, 2020 21:30:00"), true),
+          start: this.formatDate(new Date("March 17, 2020 20:00:00"), false),
+          end: this.formatDate(new Date("March 17, 2020 21:30:00"), false),
           color: "indigo"
         },
         {
           name: "with PT",
-          start: this.formatDate(new Date("March 21, 2020 10:00:00"), true),
-          end: this.formatDate(new Date("March 21, 2020 12:30:00"), true),
+          start: this.formatDate(new Date("March 21, 2020 10:00:00"), false),
+          end: this.formatDate(new Date("March 21, 2020 12:30:00"), false),
           color: "deep-purple"
         },
         {
           name: "with PT",
-          start: this.formatDate(new Date("March 28, 2020 10:00:00"), true),
-          end: this.formatDate(new Date("March 28, 2020 12:30:00"), true),
+          start: this.formatDate(new Date("March 28, 2020 10:00:00"), false),
+          end: this.formatDate(new Date("March 28, 2020 12:30:00"), false),
           color: "deep-purple"
         }
       ];

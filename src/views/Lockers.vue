@@ -36,9 +36,6 @@ export default {
         5: booked,
         6: booked,
         7: free,
-        8: booked,
-        9: booked,
-        10: booked
       },
       { 0: booked },
       { 0: booked },
@@ -50,9 +47,6 @@ export default {
         15: booked,
         16: booked,
         17: free,
-        18: booked,
-        19: booked,
-        20: booked
       },
       {
         21: free,
@@ -62,9 +56,6 @@ export default {
         25: booked,
         26: free,
         27: booked,
-        28: booked,
-        29: booked,
-        30: booked
       },
       { 0: booked },
       {
@@ -75,9 +66,6 @@ export default {
         35: booked,
         36: booked,
         37: free,
-        38: booked,
-        39: free,
-        40: booked
       }
     ]
   }),
